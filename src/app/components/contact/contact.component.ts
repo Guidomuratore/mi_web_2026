@@ -73,7 +73,7 @@ export class ContactComponent {
   contactLinks: ContactLink[] = [
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/guidomuratore',
+      url: 'https://www.linkedin.com/in/guido-ignacio-muratore-2b14991a2',
       color: '#0077b5' // Azul oficial LinkedIn
     },
     {
