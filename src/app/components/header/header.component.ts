@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-header',
-    standalone: true,
-    imports: [CommonModule],
-    template: `
+  selector: 'app-header',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
+  template: `
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect animate-slide-down">
       <nav class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <!-- Logo/Name -->
-          <a href="#" class="text-2xl font-bold text-gradient">
+          <a routerLink="/" class="text-2xl font-bold text-gradient">
             Guido Muratore
           </a>
           
@@ -32,7 +33,7 @@ import { CommonModule } from '@angular/common';
               </a>
             </li>
             <li>
-              <a href="#contact" class="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary-600/50">
+              <a routerLink="/contact" class="px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary-600/50">
                 Contacto
               </a>
             </li>
@@ -66,7 +67,7 @@ import { CommonModule } from '@angular/common';
               </a>
             </li>
             <li>
-              <a href="#contact" class="block px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all duration-300 text-center" (click)="closeMobileMenu()">
+              <a routerLink="/contact" class="block px-6 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-all duration-300 text-center" (click)="closeMobileMenu()">
                 Contacto
               </a>
             </li>
@@ -75,16 +76,16 @@ import { CommonModule } from '@angular/common';
       </nav>
     </header>
   `,
-    styles: []
+  styles: []
 })
 export class HeaderComponent {
-    mobileMenuOpen = false;
+  mobileMenuOpen = false;
 
-    toggleMobileMenu() {
-        this.mobileMenuOpen = !this.mobileMenuOpen;
-    }
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
 
-    closeMobileMenu() {
-        this.mobileMenuOpen = false;
-    }
+  closeMobileMenu() {
+    this.mobileMenuOpen = false;
+  }
 }
