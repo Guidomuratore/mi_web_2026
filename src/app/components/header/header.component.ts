@@ -11,25 +11,25 @@ import { RouterLink } from '@angular/router';
       <nav class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <!-- Logo/Name -->
-          <a routerLink="/" class="text-2xl font-bold text-gradient">
+          <a routerLink="/" (click)="scrollToTop()" class="text-2xl font-bold text-gradient cursor-pointer">
             Guido Ignacio Muratore
           </a>
           
           <!-- Navigation -->
           <ul class="hidden md:flex items-center space-x-8">
             <li>
-              <a href="#about" class="text-dark-muted hover:text-primary-400 transition-colors duration-300">
+              <a [routerLink]="['/']" fragment="about" class="text-dark-muted hover:text-primary-400 transition-colors duration-300">
                 Sobre mí
               </a>
             </li>
             <li>
-              <a href="#projects" class="text-dark-muted hover:text-primary-400 transition-colors duration-300">
-                Proyectos
+              <a [routerLink]="['/']" fragment="stack" class="text-dark-muted hover:text-primary-400 transition-colors duration-300">
+                Stack
               </a>
             </li>
             <li>
-              <a href="#stack" class="text-dark-muted hover:text-primary-400 transition-colors duration-300">
-                Stack
+              <a [routerLink]="['/']" fragment="projects" class="text-dark-muted hover:text-primary-400 transition-colors duration-300">
+                Proyectos
               </a>
             </li>
             <li>
@@ -52,18 +52,18 @@ import { RouterLink } from '@angular/router';
         <div *ngIf="mobileMenuOpen" class="md:hidden mt-4 pb-4 animate-fade-in">
           <ul class="flex flex-col space-y-4">
             <li>
-              <a href="#about" class="block text-dark-muted hover:text-primary-400 transition-colors duration-300" (click)="closeMobileMenu()">
+              <a [routerLink]="['/']" fragment="about" class="block text-dark-muted hover:text-primary-400 transition-colors duration-300" (click)="closeMobileMenu()">
                 Sobre mí
               </a>
             </li>
             <li>
-              <a href="#projects" class="block text-dark-muted hover:text-primary-400 transition-colors duration-300" (click)="closeMobileMenu()">
-                Proyectos
+              <a [routerLink]="['/']" fragment="stack" class="block text-dark-muted hover:text-primary-400 transition-colors duration-300" (click)="closeMobileMenu()">
+                Stack
               </a>
             </li>
             <li>
-              <a href="#stack" class="block text-dark-muted hover:text-primary-400 transition-colors duration-300" (click)="closeMobileMenu()">
-                Stack
+              <a [routerLink]="['/']" fragment="projects" class="block text-dark-muted hover:text-primary-400 transition-colors duration-300" (click)="closeMobileMenu()">
+                Proyectos
               </a>
             </li>
             <li>
@@ -87,5 +87,9 @@ export class HeaderComponent {
 
   closeMobileMenu() {
     this.mobileMenuOpen = false;
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

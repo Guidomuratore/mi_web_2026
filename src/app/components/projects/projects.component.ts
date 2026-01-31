@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="projects" class="py-12 md:py-16 lg:py-20 bg-slate-900 text-white">
+    <section id="projects" class="min-h-screen py-12 md:py-16 lg:py-20 bg-slate-900 text-white flex items-center">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
           Featured Projects

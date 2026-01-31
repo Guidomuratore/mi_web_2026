@@ -28,12 +28,12 @@ import { RouterLink } from '@angular/router';
                 </a>
               </li>
               <li>
-                <a href="#about" class="text-dark-muted hover:text-primary-400 transition-colors duration-300 text-sm">
+                <a [routerLink]="['/']" fragment="about" class="text-dark-muted hover:text-primary-400 transition-colors duration-300 text-sm">
                   Sobre mí
                 </a>
               </li>
               <li>
-                <a href="#projects" class="text-dark-muted hover:text-primary-400 transition-colors duration-300 text-sm">
+                <a [routerLink]="['/']" fragment="projects" class="text-dark-muted hover:text-primary-400 transition-colors duration-300 text-sm">
                   Proyectos
                 </a>
               </li>

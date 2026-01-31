@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="about" class="py-24 bg-dark-surface/30">
+    <section id="about" class="min-h-screen py-24 bg-dark-surface/30 flex items-center">
       <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto">
           <!-- Section title -->
