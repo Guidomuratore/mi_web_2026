@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
               <!-- Avatar placeholder -->
               <div class="flex-shrink-0">
                 <img 
-                  src="assets/images/perfil.jpg" 
+                  src="assets/images/foto_perfil.jpg" 
                   alt="Foto de Guido" 
                   class="w-32 h-32 rounded-full object-cover shadow-lg mx-auto mb-4 border-4 border-white"
                 >
