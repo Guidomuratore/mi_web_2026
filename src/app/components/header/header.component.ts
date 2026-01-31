@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
         <div class="flex items-center justify-between">
           <!-- Logo/Name -->
           <a routerLink="/" class="text-2xl font-bold text-gradient">
-            Guido Muratore
+            Guido Ignacio Muratore
           </a>
           
           <!-- Navigation -->
