@@ -6,29 +6,29 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="projects" class="py-20 bg-slate-900 text-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
+    <section id="projects" class="py-12 md:py-16 lg:py-20 bg-slate-900 text-white">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
           Featured Projects
         </h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div *ngFor="let project of projects" class="group bg-slate-800 rounded-2xl p-6 border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div *ngFor="let project of projects" class="group bg-slate-800 rounded-2xl p-4 sm:p-6 border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
+              <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
                 {{ project.title }}
               </h3>
-              <span class="px-3 py-1 text-xs font-semibold rounded-full bg-blue-900 text-blue-200">
+              <span class="px-3 py-1 text-xs font-semibold rounded-full bg-blue-900 text-blue-200 self-start sm:self-auto whitespace-nowrap">
                 {{ project.status }}
               </span>
             </div>
             
-            <p class="text-gray-400 mb-6 leading-relaxed">
+            <p class="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed">
               {{ project.description }}
             </p>
             
             <div class="flex flex-wrap gap-2">
-              <span *ngFor="let tech of project.stack" class="px-3 py-1 bg-slate-900 rounded-md text-sm text-gray-300 border border-slate-700">
+              <span *ngFor="let tech of project.stack" class="px-2.5 sm:px-3 py-1 bg-slate-900 rounded-md text-xs sm:text-sm text-gray-300 border border-slate-700">
                 {{ tech }}
               </span>
             </div>
