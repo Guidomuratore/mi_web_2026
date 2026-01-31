@@ -42,7 +42,7 @@ import { CommonModule } from '@angular/common';
 export class ProjectsComponent {
   projects = [
     {
-      title: 'TucumanAI',
+      title: 'Asistente IA Personal de Finanzas',
       description: 'Asistente personal de finanzas con IA integrado en WhatsApp. Utiliza OCR para leer facturas, procesa audio y texto mediante Evolution API y guarda todo en Google Sheets.',
       stack: ['n8n', 'Evolution API', 'Raspberry Pi', 'Docker', 'PostgreSQL'],
       status: 'En Desarrollo'
