@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-about',
-    standalone: true,
-    imports: [CommonModule],
-    template: `
+  selector: 'app-about',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
     <section id="about" class="py-24 bg-dark-surface/30">
       <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto">
@@ -19,9 +19,11 @@ import { CommonModule } from '@angular/common';
             <div class="flex flex-col md:flex-row items-center gap-8">
               <!-- Avatar placeholder -->
               <div class="flex-shrink-0">
-                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-5xl font-bold text-white">
-                  GM
-                </div>
+                <img 
+                  src="assets/images/perfil.jpg" 
+                  alt="Foto de Guido" 
+                  class="w-32 h-32 rounded-full object-cover shadow-lg mx-auto mb-4 border-4 border-white"
+                >
               </div>
               
               <!-- Bio -->
@@ -48,6 +50,6 @@ import { CommonModule } from '@angular/common';
       </div>
     </section>
   `,
-    styles: []
+  styles: []
 })
 export class AboutComponent { }
