@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TrackingService } from './tracking/tracking.service';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -22,6 +23,12 @@ import { FooterComponent } from './components/footer/footer.component';
   `,
   styles: []
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Guido Muratore - Portfolio';
+
+  constructor(private trackingService: TrackingService) { }
+
+  ngOnInit(): void {
+    this.trackingService.trackVisit();
+  }
 }
