@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { HeroComponent } from '../../components/hero/hero.component';
@@ -20,12 +20,12 @@ import { ProjectsComponent } from '../../components/projects/projects.component'
   template: `
     <main>
       <app-hero />
-      <app-about />
-      <app-tech-stack />
-      <app-projects />
+      <div class="fade-in-up"><app-about /></div>
+      <div class="fade-in-up"><app-tech-stack /></div>
+      <div class="fade-in-up"><app-projects /></div>
       
       <!-- Call to Action -->
-      <section class="py-20 px-6">
+      <section class="py-20 px-6 fade-in-up">
         <div class="container mx-auto max-w-4xl text-center">
           <div class="glass-card p-12 rounded-2xl">
             <h2 class="text-4xl md:text-5xl font-bold text-gradient mb-8">
@@ -44,5 +44,24 @@ import { ProjectsComponent } from '../../components/projects/projects.component'
   `,
   styles: []
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
+  ngAfterViewInit() {
+    // Scroll animation observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all fade-in-up elements
+    const elements = document.querySelectorAll('.fade-in-up');
+    elements.forEach(el => observer.observe(el));
+  }
 }

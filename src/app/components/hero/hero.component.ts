@@ -6,9 +6,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20">
-      <!-- Background gradient -->
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-900/20 via-dark-bg to-dark-bg"></div>
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 animated-gradient">
+      <!-- Glow effect -->
+      <div class="absolute inset-0 glow-effect"></div>
       
       <!-- Animated background elements -->
       <div class="absolute inset-0 overflow-hidden">

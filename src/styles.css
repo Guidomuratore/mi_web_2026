@@ -19,11 +19,96 @@
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600;
   }
 
+  /* Enhanced Glassmorphism */
   .glass-effect {
-    @apply bg-dark-surface/50 backdrop-blur-lg border border-dark-border;
+    @apply bg-dark-surface/40 backdrop-blur-xl border border-dark-border/50;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+
+  .glass-card {
+    @apply bg-dark-surface/30 backdrop-blur-2xl border border-primary-500/20;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-card:hover {
+    @apply border-primary-500/40;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37),
+                0 0 20px 0 rgba(59, 130, 246, 0.2),
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
   }
 
   .hover-lift {
     @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+
+  /* Scroll Animations */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Animated Gradient Background */
+  .animated-gradient {
+    background: linear-gradient(
+      -45deg,
+      #0f172a,
+      #1e293b,
+      #0c4a6e,
+      #1e3a8a
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Glow effect for hero */
+  .glow-effect {
+    position: relative;
+  }
+
+  .glow-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(
+      circle,
+      rgba(59, 130, 246, 0.15) 0%,
+      transparent 70%
+    );
+    animation: pulse 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.5;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
   }
 }
