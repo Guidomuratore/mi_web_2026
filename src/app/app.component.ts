@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { TrackingService } from './tracking/tracking.service';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -26,9 +27,20 @@ import { FooterComponent } from './components/footer/footer.component';
 export class AppComponent implements OnInit {
   title = 'Guido Muratore - Portfolio';
 
-  constructor(private trackingService: TrackingService) { }
+  constructor(
+    private trackingService: TrackingService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    // Trackear cambios de ruta (SPA navigation)
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      this.trackingService.trackVisit();
+    });
+
+    // Trackear la primera carga también (por si acaso)
     this.trackingService.trackVisit();
   }
 }
