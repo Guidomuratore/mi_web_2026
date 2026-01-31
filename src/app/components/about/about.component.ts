@@ -29,7 +29,7 @@ import { CommonModule } from '@angular/common';
               <!-- Bio -->
               <div class="flex-1 text-center md:text-left">
                 <h3 class="text-2xl md:text-3xl font-bold mb-4">
-                  Guido Ignacio Muratore
+                  Guido Muratore
                 </h3>
                 <p class="text-dark-muted text-lg leading-relaxed mb-4">
                   Soy un profesional híbrido que combina <span class="text-primary-400 font-semibold">visión de producto</span> con 

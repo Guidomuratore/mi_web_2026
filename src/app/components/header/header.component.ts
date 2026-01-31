@@ -12,7 +12,7 @@ import { RouterLink } from '@angular/router';
         <div class="flex items-center justify-between">
           <!-- Logo/Name -->
           <a routerLink="/" (click)="scrollToTop()" class="text-2xl font-bold text-gradient cursor-pointer">
-            Guido Ignacio Muratore
+            Guido Muratore
           </a>
           
           <!-- Navigation -->
