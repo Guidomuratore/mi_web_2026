@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
         </h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          <div *ngFor="let project of projects" class="group bg-slate-800 rounded-2xl p-4 sm:p-6 border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl">
+          <div *ngFor="let project of projects" class="group bg-slate-800 rounded-2xl p-4 sm:p-6 border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:shadow-2xl flex flex-col">
             <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-4">
               <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
                 {{ project.title }}
@@ -23,11 +23,11 @@ import { CommonModule } from '@angular/common';
               </span>
             </div>
             
-            <p class="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed">
+            <p class="text-sm sm:text-base text-gray-400 mb-4 sm:mb-6 leading-relaxed flex-grow">
               {{ project.description }}
             </p>
             
-            <div class="flex flex-wrap gap-2">
+            <div class="flex flex-wrap gap-2 mt-auto">
               <span *ngFor="let tech of project.stack" class="px-2.5 sm:px-3 py-1 bg-slate-900 rounded-md text-xs sm:text-sm text-gray-300 border border-slate-700">
                 {{ tech }}
               </span>
