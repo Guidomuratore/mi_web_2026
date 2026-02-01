@@ -41,6 +41,6 @@ export class AppComponent implements OnInit {
     });
 
     // Trackear la primera carga también (por si acaso)
-    this.trackingService.trackVisit();
+    // this.trackingService.trackVisit(); // ELIMINADO: NavigationEnd ya dispara esto al inicio
   }
 }
