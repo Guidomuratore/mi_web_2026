@@ -2,6 +2,7 @@ import { Component, AfterViewInit, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact-page',
@@ -34,7 +35,7 @@ import { DomSanitizer } from '@angular/platform-browser';
             <div class="glass-card p-8 rounded-2xl w-full max-w-2xl mx-auto lg:max-w-none">
               <h2 class="text-2xl font-bold mb-6">Envíame un mensaje</h2>
               
-              <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="space-y-4">
+              <form (ngSubmit)="onSubmit(contactForm, htmlForm)" #contactForm="ngForm" #htmlForm class="space-y-4">
                 
                 <!-- Row 1: Name & Email -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -296,23 +297,21 @@ export class ContactComponent implements AfterViewInit, OnInit {
     }, 100);
   }
 
-  async onSubmit(form: NgForm) {
+  async onSubmit(form: NgForm, htmlForm: HTMLFormElement) {
     if (form.valid && !this.isSubmitting) {
       this.isSubmitting = true;
       this.submitSuccess = false;
       this.submitError = false;
 
       try {
-        const response = await fetch('https://formspree.io/f/mlgnqzar', {
-          method: 'POST',
-          body: JSON.stringify(form.value),
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          }
-        });
+        const response = await emailjs.sendForm(
+          'service_v02uvv2',
+          'template_u5pf3n8',
+          htmlForm,
+          'H9bH1NFoAoCUOkkfb'
+        );
 
-        if (response.ok) {
+        if (response.status === 200) {
           this.submitSuccess = true;
           form.resetForm();
 
@@ -320,7 +319,6 @@ export class ContactComponent implements AfterViewInit, OnInit {
           setTimeout(() => {
             this.submitSuccess = false;
           }, 5000);
-
         } else {
           this.submitError = true;
         }
