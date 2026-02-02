@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { AboutComponent } from '../../components/about/about.component';
 import { TechStackComponent } from '../../components/tech-stack/tech-stack.component';
@@ -10,7 +9,6 @@ import { ProjectsComponent } from '../../components/projects/projects.component'
     selector: 'app-home',
     imports: [
         CommonModule,
-        RouterLink,
         HeroComponent,
         AboutComponent,
         TechStackComponent,
