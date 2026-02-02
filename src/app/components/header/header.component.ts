@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  template: `
+    selector: 'app-header',
+    imports: [CommonModule, RouterLink],
+    template: `
     <header class="fixed top-0 left-0 right-0 z-50 glass-effect animate-slide-down">
       <nav class="container mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
@@ -76,7 +75,7 @@ import { RouterLink } from '@angular/router';
       </nav>
     </header>
   `,
-  styles: []
+    styles: []
 })
 export class HeaderComponent {
   mobileMenuOpen = false;

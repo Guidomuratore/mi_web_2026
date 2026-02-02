@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-tech-stack',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-tech-stack',
+    imports: [CommonModule],
+    template: `
     <section id="stack" class="min-h-screen py-20 bg-slate-950 text-white flex items-center">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">
@@ -54,7 +53,7 @@ import { CommonModule } from '@angular/common';
       </div>
     </section>
   `,
-  styles: []
+    styles: []
 })
 export class TechStackComponent {
   automationTech = ['n8n', 'PostgreSQL', 'Docker', 'Python', 'Node.js'];

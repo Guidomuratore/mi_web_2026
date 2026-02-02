@@ -7,17 +7,16 @@ import { TechStackComponent } from '../../components/tech-stack/tech-stack.compo
 import { ProjectsComponent } from '../../components/projects/projects.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink,
-    HeroComponent,
-    AboutComponent,
-    TechStackComponent,
-    ProjectsComponent
-  ],
-  template: `
+    selector: 'app-home',
+    imports: [
+        CommonModule,
+        RouterLink,
+        HeroComponent,
+        AboutComponent,
+        TechStackComponent,
+        ProjectsComponent
+    ],
+    template: `
     <main>
       <app-hero />
       <div class="fade-in-up"><app-about /></div>
@@ -25,7 +24,7 @@ import { ProjectsComponent } from '../../components/projects/projects.component'
       <div class="fade-in-up"><app-projects /></div>
     </main>
   `,
-  styles: []
+    styles: []
 })
 export class HomeComponent implements AfterViewInit {
   ngAfterViewInit() {

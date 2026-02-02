@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-about',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-about',
+    imports: [CommonModule],
+    template: `
     <section id="about" class="min-h-screen py-24 bg-dark-surface/30 flex items-center">
       <div class="container mx-auto px-6">
         <div class="max-w-4xl mx-auto">
@@ -50,6 +49,6 @@ import { CommonModule } from '@angular/common';
       </div>
     </section>
   `,
-  styles: []
+    styles: []
 })
 export class AboutComponent { }

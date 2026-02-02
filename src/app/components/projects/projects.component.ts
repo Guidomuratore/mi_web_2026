@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-projects',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-projects',
+    imports: [CommonModule],
+    template: `
     <section id="projects" class="min-h-screen py-12 md:py-16 lg:py-20 bg-slate-900 text-white flex items-center">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
@@ -37,7 +36,7 @@ import { CommonModule } from '@angular/common';
       </div>
     </section>
   `,
-  styles: []
+    styles: []
 })
 export class ProjectsComponent {
   projects = [

@@ -3,10 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
-  template: `
+    selector: 'app-footer',
+    imports: [CommonModule, RouterLink],
+    template: `
     <footer class="bg-dark-card border-t border-dark-border">
       <div class="container mx-auto px-6 py-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -85,7 +84,7 @@ import { RouterLink } from '@angular/router';
       </div>
     </footer>
   `,
-  styles: []
+    styles: []
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();

@@ -6,14 +6,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent
-  ],
-  template: `
+    selector: 'app-root',
+    imports: [
+        RouterOutlet,
+        HeaderComponent,
+        FooterComponent
+    ],
+    template: `
     <div class="min-h-screen bg-dark-bg flex flex-col">
       <app-header />
       <div class="flex-grow">
@@ -22,7 +21,7 @@ import { filter } from 'rxjs/operators';
       <app-footer />
     </div>
   `,
-  styles: []
+    styles: []
 })
 export class AppComponent implements OnInit {
   title = 'Guido Muratore - Portfolio';

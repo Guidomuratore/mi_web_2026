@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-hero',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    selector: 'app-hero',
+    imports: [CommonModule],
+    template: `
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 animated-gradient">
       <!-- Glow effect -->
       <div class="absolute inset-0 glow-effect"></div>
@@ -59,6 +58,6 @@ import { CommonModule } from '@angular/common';
       </div>
     </section>
   `,
-  styles: []
+    styles: []
 })
 export class HeroComponent { }

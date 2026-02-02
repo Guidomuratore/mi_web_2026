@@ -5,13 +5,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 import emailjs from '@emailjs/browser';
 
 @Component({
-  selector: 'app-contact-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule
-  ],
-  template: `
+    selector: 'app-contact-page',
+    imports: [
+        CommonModule,
+        FormsModule
+    ],
+    template: `
     <main class="min-h-screen pt-20 animated-gradient">
       <!-- Glow effect -->
       <div class="absolute inset-0 glow-effect"></div>
@@ -238,7 +237,7 @@ import emailjs from '@emailjs/browser';
       </div>
     </main>
   `,
-  styles: []
+    styles: []
 })
 export class ContactComponent implements AfterViewInit, OnInit {
   isSubmitting = false;
